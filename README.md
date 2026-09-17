@@ -32,4 +32,4 @@
 
 ## Ссылка на опубликованный проект
 
-GitHub Pages: https://korolik-2nol.github.io/kr1-html-css-shop/
+GitHub Pages: https://KorolikKorolik.github.io/kr1-html-css-shop/
