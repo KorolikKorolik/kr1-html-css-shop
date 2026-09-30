@@ -19,6 +19,10 @@ footer {
 
 header {
   background-color: #f2f2f2;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -28,6 +32,9 @@ footer {
 .site-header {
   max-width: 1100px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .site-logo {
@@ -38,12 +45,14 @@ footer {
 
 .site-nav__list {
   padding: 0;
-  margin: 16px 0 0;
+  margin: 0;
   list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 .site-nav__list li {
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 
 .site-nav__list a {
@@ -73,7 +82,9 @@ footer {
 }
 
 .product-card {
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
   padding: 16px;
   border: 1px solid #dddddd;
   border-radius: 8px;
@@ -98,11 +109,10 @@ footer {
 }
 
 .aside-info {
-  max-width: 1100px;
-  margin: 0 auto 32px;
   padding: 16px;
   border-left: 4px solid #0057b8;
   background-color: #f7f7f7;
+  border-radius: 4px;
 }
 
 /*
@@ -192,6 +202,7 @@ footer {
 */
 .form-actions {
   display: flex;
+  justify-content: flex-end;
   gap: 12px;
   margin-top: 20px;
 }
@@ -205,4 +216,27 @@ footer {
   padding: 16px;
   border-left: 4px solid #168a2f;
   background-color: #eefaf0;
+}
+
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+
+.page-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+  align-items: start;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.product-card__button {
+  margin-top: auto;
 }
