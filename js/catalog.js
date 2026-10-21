@@ -44,6 +44,10 @@ function createProductCard(product) {
   detailsLink.href = `product.html?id=${product.id}`;
   detailsLink.textContent = 'Подробнее';
 
+  const actions = document.createElement('div');
+  actions.className = 'product-card__actions';
+  actions.append(detailsLink);
+
   const compareLabel = document.createElement('label');
   compareLabel.className = 'product-compare';
   const compareCheckbox = document.createElement('input');
@@ -53,7 +57,7 @@ function createProductCard(product) {
   compareCheckbox.setAttribute('aria-label', `Добавить ${product.name} к сравнению`);
   compareLabel.append(compareCheckbox, ' Сравнить');
 
-  card.append(imageLink, title, description, price, compareLabel, detailsLink);
+  card.append(imageLink, title, description, price, compareLabel, actions);
   return card;
 }
 

@@ -41,7 +41,11 @@ if (window.shopProducts) {
     detailsLink.className = 'button button--secondary product-card__details';
     detailsLink.href = `product.html?id=${product.id}`;
     detailsLink.textContent = 'Подробнее';
-    card.insertBefore(detailsLink, orderButton);
+
+    const actions = document.createElement('div');
+    actions.className = 'product-card__actions';
+    card.insertBefore(actions, orderButton);
+    actions.append(detailsLink, orderButton);
   });
 }
 

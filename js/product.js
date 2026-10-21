@@ -11,6 +11,7 @@ if (!product) {
   document.getElementById('product-name').textContent = product.name;
   document.getElementById('product-description').textContent = product.description;
   document.getElementById('product-price').textContent = `${product.price} руб.`;
+  document.getElementById('product-order-button').dataset.product = product.name;
 
   const image = document.getElementById('product-image');
   image.src = product.image;

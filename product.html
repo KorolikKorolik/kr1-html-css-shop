@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/products.js" defer></script>
   <script src="js/product.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">ToadsFrog</a>
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
@@ -53,6 +54,11 @@
             <a class="button button--primary" href="index.html#popular">Перейти к популярным товарам</a>
             <a class="button button--secondary" href="catalog.html">Назад в каталог</a>
           </p>
+          <p>
+            <button class="button button--primary product-card__button product-detail__order-button" id="product-order-button" type="button">
+              Заказать
+            </button>
+          </p>
         </div>
       </div>
     </section>
@@ -63,5 +69,102 @@
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
   <a class="back-to-top" href="#" aria-label="Вернуться к началу страницы">Наверх</a>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="selected-product" type="hidden">
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-name">Имя</label>
+        <input class="order-form__input"
+          id="order-name"
+          name="name"
+          type="text"
+          placeholder="Введите ваше имя"
+          minlength="2"
+          autocomplete="given-name"
+          required
+        >
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-email">E-mail</label>
+        <input class="order-form__input"
+          id="order-email"
+          name="email"
+          type="email"
+          placeholder="example@mail.ru"
+          autocomplete="email"
+          required
+        >
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-phone">Телефон</label>
+        <input class="order-form__input"
+          id="order-phone"
+          name="phone"
+          type="tel"
+          inputmode="tel"
+          placeholder="+7 (900) 000-00-00"
+          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+          required
+        >
+        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-date">Дата связи</label>
+        <input class="order-form__input"
+          id="order-date"
+          name="date"
+          type="date"
+        >
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-topic">Тема заявки</label>
+        <select class="order-form__select" id="order-topic" name="topic" required>
+          <option value="">Выберите тему</option>
+          <option value="product">Заказ товара</option>
+          <option value="consultation">Консультация</option>
+          <option value="delivery">Доставка</option>
+        </select>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-comment">Комментарий</label>
+        <textarea class="order-form__textarea"
+          id="order-comment"
+          name="comment"
+          rows="4"
+          placeholder="Укажите дополнительную информацию"
+        ></textarea>
+      </div>
+
+      <div class="order-form__field order-form__field--checkbox">
+        <label class="order-form__label">
+          <input class="order-form__input order-form__input--checkbox"
+            id="order-agreement"
+            name="agreement"
+            type="checkbox"
+            required
+          >
+          Я согласен на обработку данных
+        </label>
+      </div>
+
+      <div class="order-form__actions">
+        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+        <button class="button button--primary" type="submit">Отправить заявку</button>
+      </div>
+    </form>
+  </dialog>
+
+  <p class="success-message" id="success-message" hidden>
+    Форма успешно отправлена!
+  </p>
 </body>
 </html>
