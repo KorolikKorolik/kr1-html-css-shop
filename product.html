@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Подробная карточка товара: фотография, описание, цена и характеристики.">
+  <title>Карточка товара — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/products.js" defer></script>
+  <script src="js/product.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Карточка товара</span>
+    </nav>
+
+    <p class="section" id="product-error" role="status" hidden>
+      Товар не найден. <a href="catalog.html">Вернуться в каталог</a>
+    </p>
+
+    <section class="product-detail" id="product-content" aria-labelledby="product-name">
+      <div class="product-detail__layout">
+        <img class="product-detail__image" id="product-image" src="images/1.svg" alt="">
+        <div>
+          <h1 id="product-name">Загрузка товара...</h1>
+          <p class="product-detail__price" id="product-price"></p>
+          <h2>Описание</h2>
+          <p id="product-description"></p>
+          <h2>Характеристики</h2>
+          <table class="product-specs">
+            <tbody id="product-specifications"></tbody>
+          </table>
+          <p>
+            <a class="button button--primary" href="index.html#popular">Перейти к популярным товарам</a>
+            <a class="button button--secondary" href="catalog.html">Назад в каталог</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+  <a class="back-to-top" href="#" aria-label="Вернуться к началу страницы">Наверх</a>
+</body>
+</html>
